@@ -1,6 +1,6 @@
 ## Markdown Italic Parser
 
-A specialised text processor that converts Markdown italic syntax into standard HTML ´<i>´ tags. This parser respects strict Markdown rules regarding whitespace and matching delimiters.
+A specialised text processor that converts Markdown italic syntax into standard HTML `<i>` tags. This parser respects strict Markdown rules regarding whitespace and matching delimiters.
 
 ### Features
 
