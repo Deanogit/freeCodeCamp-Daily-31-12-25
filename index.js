@@ -19,13 +19,25 @@
 //   return markdown;
 // }
 
+// function parseItalics(markdown) {
+//   console.log(markdown);
+//   // find first [*_]
+//   // no spaces
+//   // capture group ([a-z\s])
+//   // last [*_]
+//   const regex = /[*_]([^*_]+)[*_]/g;
+//   console.log(markdown.match(regex));
+//   return markdown;
+// }
+
 function parseItalics(markdown) {
-  console.log(markdown);
-  // find first [*_]
-  // no spaces
-  // capture group ([a-z\s])
-  // last [*_]
-  const regex = /[*_]([^*_]+)[*_]/g;
-  console.log(markdown.match(regex));
-  return markdown;
+  // Pattern:
+  // 1. Symbol [*_]
+  // 2. Capture group: Non-space (\S), then anything (.*?), then non-space (\S)
+  // 3. Symbol [*_]
+  const regex = /([*_])(\S.*?\S)\1/g;
+
+  return markdown.replace(regex, (match, delimiter, text) => {
+    return `<i>${text}</i>`;
+  });
 }
