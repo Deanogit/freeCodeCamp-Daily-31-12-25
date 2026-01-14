@@ -7,3 +7,14 @@
 // For example, given "*This is italic*", return "<i>This is italic</i>".
 
 // Note: The console may not display HTML tags in strings when logging messages. Check the browser console to see logs with tags included.
+
+function parseItalics(markdown) {
+  console.log(markdown);
+  // find first [*_]
+  // no spaces
+  // capture group ([a-z\s])
+  // last [*_]
+  const regex = /[*_]([a-z\s])[*_]/;
+  console.log(markdown.match(regex));
+  return markdown;
+}
