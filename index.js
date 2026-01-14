@@ -35,7 +35,7 @@ function parseItalics(markdown) {
   // 1. Symbol [*_]
   // 2. Capture group: Non-space (\S), then anything (.*?), then non-space (\S)
   // 3. Symbol [*_]
-  const regex = /([*_])(\S.*?\S)\1/g;
+  const regex = /([*_])(\S.*?\S|\S)\1/g;
 
   return markdown.replace(regex, (match, delimiter, text) => {
     return `<i>${text}</i>`;
